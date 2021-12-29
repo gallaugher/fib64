@@ -4,8 +4,7 @@ The files above are CircuitPython programs that will run animations on the beaut
 https://www.evilgeniuslabs.org
 Follow @evilgeniuslab and @jasoncoon_ for lots of inspiring builds and demos with these & other boards.
 
-https://www.youtube.com/embed/mWVyG96Z44I
-
+https://youtu.be/mWVyG96Z44I
 At the time I created this repo, I couldn't find any CircuitPython examples available for the board, so I created some files to use on a tutorial I've posted on my YouTube Channel.
 
 Newbies can find this in the MakerSnacks playlist at:
