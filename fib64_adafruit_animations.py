@@ -1,5 +1,4 @@
-# Lesson 8 - adafruit_led_animation
-# Lesson 7 - Working with an LED Light Strip
+# Animations for the Fibonacci 64 Micro from Evil Genius Labs
 import board
 import neopixel
 import time
