@@ -1,6 +1,6 @@
 # A simple rainbow animation for the Fibonacci 64 Micro by Evil Genius Labs
 # Video demo can be found by searching: https://YouTube.com/profgallaugher
-import board, time, neopixel, digitalio, touchio
+import board, time, neopixel
 from rainbowio import colorwheel
 
 num_of_leds = 64
