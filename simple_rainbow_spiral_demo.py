@@ -7,7 +7,8 @@ num_of_leds = 64
 led_pin = board.MOSI
 led_brightness = 0.2
 leds = neopixel.NeoPixel(led_pin, num_of_leds, brightness=led_brightness, auto_write=False)
-leds.fill((0, 0, 255))
+leds.fill((0, 0, 0))
+leds.write()
 
 while True:
     for i in range(num_of_leds):
@@ -21,6 +22,3 @@ while True:
     leds.brightness = led_brightness
     leds.fill((0, 0, 0))
     leds.write()
-
-
-
