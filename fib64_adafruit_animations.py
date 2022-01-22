@@ -1,4 +1,15 @@
-# Animations for the Fibonacci 64 Micro from Evil Genius Labs
+# Animations for the Fibonacci boards from Evil Genius Labs
+# I used this with the magnificent Fibonacci 64 micro, which you
+# can buy here: https://www.evilgeniuslabs.org/fibonacci64-micro
+# but this code should work with any of the boards as long as
+# you're using it with CircuitPython.
+# Be sure to change the pixels_num_of_lights if you're using a
+# board that doesn't have 64 LEDs.
+# I have a video on how I set up this board at:
+# https://youtu.be/JQoC_TL9RQU
+# The EGL repo for the Fib64 in CircuitPython is at:
+# https://github.com/jasoncoon/fibonacci64-circuitpython-demoreel
+
 import board
 import neopixel
 import time
@@ -47,11 +58,11 @@ pixels = neopixel.NeoPixel(pixels_pin, pixels_num_of_lights, brightness = pixel_
 
 blink = Blink(pixels, speed=0.5, color=AMBER)
 
-colorcycle = ColorCycle(pixels, 0.1, colors=colors)
+colorcycle = ColorCycle(pixels, 0.2, colors=colors)
 
 chase = Chase(pixels, speed=0.1, color=WHITE, size=3, spacing=6)
 
-comet = Comet(pixels, speed=0.1, color=RED, tail_length=int(pixels_num_of_lights/4), bounce=True)
+comet = Comet(pixels, speed=0.035, color=RED, tail_length=int(pixels_num_of_lights/4), bounce=True)
 
 pulse = Pulse(pixels, speed=0.05, color=AMBER, period=2)
 
@@ -61,10 +72,23 @@ sparkle_pulse = SparklePulse(pixels, speed=0.05, period=5, color=BLUE)
 
 rainbow = Rainbow(pixels, speed=0.05, period=2)
 
-rainbow_chase = RainbowChase(pixels, speed=0.01, size=5, spacing=0, step=8)
+
+rc_step = 4 #int(256/pixels_num_of_lights)
+rc_size = 1 # int(256/pixels_num_of_lights)
+rc_spacing = 0
+rainbow_chase = RainbowChase(pixels, speed=0.01, size=rc_size, spacing=rc_spacing, step=rc_step)
 
 animations = AnimationSequence(
-    blink, colorcycle, chase, comet, pulse, sparkle, sparkle_pulse, rainbow, rainbow_chase, advance_interval=5, auto_clear=True
+    # blink, 
+    # colorcycle, 
+    rainbow_chase, 
+    chase, 
+    comet, 
+    pulse, 
+    sparkle, 
+    rainbow, 
+    sparkle_pulse, 
+    advance_interval=5, auto_clear=True
 )
 
 while True:
